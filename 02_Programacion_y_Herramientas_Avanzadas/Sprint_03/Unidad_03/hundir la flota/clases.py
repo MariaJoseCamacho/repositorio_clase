@@ -3,7 +3,7 @@ Vamos a establecer las diferentes clases
 """
 import numpy as np
 import random
-import variables
+from variables import stockbarcos
 class Barco:
 
     orientación= ["N","S","E","O"]
@@ -93,22 +93,35 @@ class Barco:
     def allbarcos(self, tablero, stockbarcos):
         for nombre, cantidad in stockbarcos.items():
             for i in range(cantidad):
-                tablerotemp= colocabarco(nombre, tablero)
+                tablerotemp= Barco.colocabarco(nombre, tablero)
                 i-=1
-            return tablerotemp
+        return tablerotemp
 
 Destructor = Barco("Destructor", 1, 4)
 Submarino = Barco("Submarino", 2, 3)
 Acorazado = Barco("Acorazado", 3, 2)
 Portaaviones = Barco("Portaaviones", 4, 1)      
-stockbarcos = {" Destructores":4,"Submarino":3,"Acorazado":2,"Portaviones":1}
+
 
 class Tablero:
 
     def creatablero (self,lado=10):
         return np.full((lado, lado)," " )
     
-    
+    def disparar(tablero):
+        (x,y) = input ("¿Donde quieres disparar? Recuerda que tienes que facilitarnos dos coordenadas, la 'x'  y la 'y'.")
+        if tablero[x][y]=="O":
+            tablero[x][y]= "X"
+        elif tablero[x][y]=="X":
+            print(f"Nooooo, aquí ya habías disparado")
+        else:
+            tablero[x][y]="-"
+            print("Has disparado al agua")
+
+def comprobartablero(tablero):
+       
+    if tablero!="O":
+        return f"¡¡¡Has ganado!!!"
 
    
 

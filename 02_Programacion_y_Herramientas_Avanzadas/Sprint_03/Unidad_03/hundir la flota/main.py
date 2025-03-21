@@ -20,9 +20,11 @@ def iniciarjuego():
 
     print(f"Tenemos 4 Destructores")
     print("#"*40)
-    for i in range(4):
-        tablerojp=Tablero.colocabarco(Destructor, tablerojp)
-        print(tablerojp)
+
+    Barco.allbarcos(tablerojp,stockbarcos)
+    Barco.allbarcos(tableroCPU, stockbarcos)
+   
+    
     
     
 
