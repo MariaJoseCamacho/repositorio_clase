@@ -8,13 +8,22 @@ import random
 def iniciarjuego():
     print(mensajeinicial)
     nombrejp = input("Nombre de jugador:")
-    print(tablerojp, "\n", "#"*40,"\n",  tableroCPU)
+
+    tablerojp = Tablero.creatablero(10)
+    print(tablerojp)
+    print("#"*40)
+    tableroCPU= Tablero.creatablero(10)
+    print(tableroCPU)
+
     print(f"Bienvenido {nombrejp} vamos a colocar tus barcos")
     print("#" *40)
+
     print(f"Tenemos 4 Destructores")
+    print("#"*40)
     for i in range(4):
-        tablerojp = colocabarco(Destructor, tablerojp)
-        return tablerojp
+        tablerojp=Tablero.colocabarco(Destructor, tablerojp)
+        print(tablerojp)
+    
     
 
 

@@ -51,46 +51,36 @@ class Barco:
                 return False
             tablerotemp[x,y]="O"
         return tablerotemp
-
-Destructor = Barco("Destructor", 1, 4)
-Submarino = Barco("Submarino", 2, 3)
-Acorazado = Barco("Acorazado", 3, 2)
-Portaaviones = Barco("Portaaviones", 4, 1)      
-
-
-class Tablero:
-
-    def creatablero (self,lado=10):
-        return np.full((lado, lado)," " )
     
     def colocabarco(self,barco, tablero):
         orientación= ["N","S","E","O"]
         colocar= barco.posicion
-        newori=np.random.choice(orientación)
         fila, columna = colocar[0]
+
+        newori=np.random.choice(orientación)
 
         if newori == "N" and fila - (barco.cantidad - 1) >= 0:
             for i in range(barco.cantidad):
-                if tablero[fila - i, columna] != " " and tablero == tablerojp:
+                if tablero[fila - i, columna] != " " :
                     return "Espacio ocupado, intenta de nuevo."
             for i in range(barco.cantidad):
                 tablero[fila - i, columna] = "O"
 
-        elif newori == "S" and fila + (barco.cantidad - 1) < 10 and tablero == tablerojp:
+        elif newori == "S" and fila + (barco.cantidad - 1) < 10:
             for i in range(barco.cantidad):
                 if tablero[fila + i, columna] != " ":
                     return "Espacio ocupado, intenta de nuevo."
             for i in range(barco.cantidad):
                 tablero[fila + i, columna] = "O"
 
-        elif newori == "E" and columna + (barco.cantidad - 1) < 10 and tablero == tablerojp:
+        elif newori == "E" and columna + (barco.cantidad - 1) < 10:
             for i in range(barco.cantidad):
                 if tablero[fila, columna + i] != " ":
                     return "Espacio ocupado, intenta de nuevo."
             for i in range(barco.cantidad):
                 tablero[fila, columna + i] = "O"
 
-        elif newori == "O" and columna - (barco.cantidad - 1) >= 0 and tablero == tablerojp:
+        elif newori == "O" and columna - (barco.cantidad - 1) >= 0:
             for i in range(barco.cantidad):
                 if tablero[fila, columna - i] != " ":
                     return "Espacio ocupado, intenta de nuevo."
@@ -99,6 +89,26 @@ class Tablero:
         else:
             print(f"La CPU ha colocado sus barcos")
         return tablero
+    
+    def allbarcos(self, tablero, stockbarcos):
+        for nombre, cantidad in stockbarcos.items():
+            for i in range(cantidad):
+                tablerotemp= colocabarco(nombre, tablero)
+                i-=1
+            return tablerotemp
+
+Destructor = Barco("Destructor", 1, 4)
+Submarino = Barco("Submarino", 2, 3)
+Acorazado = Barco("Acorazado", 3, 2)
+Portaaviones = Barco("Portaaviones", 4, 1)      
+stockbarcos = {" Destructores":4,"Submarino":3,"Acorazado":2,"Portaviones":1}
+
+class Tablero:
+
+    def creatablero (self,lado=10):
+        return np.full((lado, lado)," " )
+    
+    
 
    
 
