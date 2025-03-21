@@ -104,30 +104,32 @@ class Tablero:
             if newori == "N" and fila - (barco.cantidad - 1) >= 0:
                 for i in range(barco.cantidad):
                     if tableroCPU[fila - i, columna] != " ":
-                        return "Espacio ocupado, intenta de nuevo."
+                        
                 for i in range(barco.cantidad):
                     tableroCPU[fila - i, columna] = "O"
+                    
 
             elif newori == "S" and fila + (barco.cantidad - 1) < 10:
                 for i in range(barco.cantidad):
                     if tableroCPU[fila + i, columna] != " ":
-                        return "Espacio ocupado, intenta de nuevo."
+                        
                 for i in range(barco.cantidad):
                     tableroCPU[fila + i, columna] = "O"
 
             elif newori == "E" and columna + (barco.cantidad - 1) < 10:
                 for i in range(barco.cantidad):
                     if tableroCPU[fila, columna + i] != " ":
-                        return "Espacio ocupado, intenta de nuevo."
+                        
                 for i in range(barco.cantidad):
                     tableroCPU[fila, columna + i] = "O"
 
             elif newori == "O" and columna - (barco.cantidad - 1) >= 0:
                 for i in range(barco.cantidad):
                     if tableroCPU[fila, columna - i] != " ":
-                        return "Espacio ocupado, intenta de nuevo."
+                        
                 for i in range(barco.cantidad):
                     tableroCPU[fila, columna - i] = "O"
+            
 
-            return tableroCPU
+            return f"La CPU ha colocado sus barcos"
 
