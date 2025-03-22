@@ -8,11 +8,13 @@ import random
 def iniciarjuego():
     print(mensajeinicial)
     nombrejp = input("Nombre de jugador:")
+    tableroobj=Tablero()
 
-    tablerojp = Tablero.creatablero(10)
+    tablerojp = tableroobj.creatablero(10)
     print(tablerojp)
     print("#"*40)
-    tableroCPU= Tablero.creatablero(10)
+    tableroCPU= tableroobj.creatablero(10)
+    tableromuestra= tableroCPU.copy()
     print(tableroCPU)
 
     print(f"Bienvenido {nombrejp} vamos a colocar tus barcos")
@@ -21,8 +23,12 @@ def iniciarjuego():
     print(f"Tenemos 4 Destructores")
     print("#"*40)
 
-    Tablero.allbarcos(tablerojp, stockbarcos)
-    Tablero.allbarcos(tableroCPU, stockbarcos)
+    tableroobj.allbarcos( stockbarcos,tablerojp)
+    tableroobj.allbarcos( stockbarcos,tableromuestra)
+
+    print(tablerojp)
+    print("#"*40)
+    print(tableroCPU)
    
 
     

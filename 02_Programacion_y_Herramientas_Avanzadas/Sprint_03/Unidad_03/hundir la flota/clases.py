@@ -33,7 +33,7 @@ class Barco:
                 self.coordenadas.append(coordenada)
         return self.coordenadas
     
-    def coloca_barco(self,tablero, barco):
+    def coloca_barco(self, tablero):
         nummaxfilas = tablero.shape[0]
         nummaxcolum = tablero.shape[1]
         tablerotemp = tablero.copy()
@@ -41,50 +41,49 @@ class Barco:
             fila = x
             columna = y
             if fila<0 or fila >= nummaxfilas:
-                print(f"No puedo poner la pieza{barco}, se sale del tablero")
+                print(f"No puedo poner la pieza{self}, se sale del tablero")
                 return False
             if columna<0 or columna >= nummaxcolum:
-                print(f"No puedo poner la pieza{barco} porque sale del tablero")
+                print(f"No puedo poner la pieza{self} porque sale del tablero")
                 return False
-            if tablero[x,y] == "0" or tablero[barco]=="X":
+            if tablero[x,y] == "0" or tablero[self]=="X":
                 print(f"Hay otro barco en este sitio")
                 return False
             tablerotemp[x,y]="O"
         return tablerotemp
     
-    def colocabarco(self,barco, tablero):
+    def colocabarco(self, tablero):
         orientación= ["N","S","E","O"]
-        colocar= barco.posicion
-        fila, columna = colocar[0]
+        fila, columna = self.posicion[0]
 
         newori=np.random.choice(orientación)
 
-        if newori == "N" and fila - (barco.cantidad - 1) >= 0:
-            for i in range(barco.cantidad):
+        if newori == "N" and fila - (self.cantidad - 1) >= 0:
+            for i in range(self.cantidad):
                 if tablero[fila - i, columna] != " " :
                     return "Espacio ocupado, intenta de nuevo."
-            for i in range(barco.cantidad):
+            for i in range(self.cantidad):
                 tablero[fila - i, columna] = "O"
 
-        elif newori == "S" and fila + (barco.cantidad - 1) < 10:
-            for i in range(barco.cantidad):
+        elif newori == "S" and fila + (self.cantidad - 1) < 10:
+            for i in range(self.cantidad):
                 if tablero[fila + i, columna] != " ":
                     return "Espacio ocupado, intenta de nuevo."
-            for i in range(barco.cantidad):
+            for i in range(self.cantidad):
                 tablero[fila + i, columna] = "O"
 
-        elif newori == "E" and columna + (barco.cantidad - 1) < 10:
-            for i in range(barco.cantidad):
+        elif newori == "E" and columna + (self.cantidad - 1) < 10:
+            for i in range(self.cantidad):
                 if tablero[fila, columna + i] != " ":
                     return "Espacio ocupado, intenta de nuevo."
-            for i in range(barco.cantidad):
+            for i in range(self.cantidad):
                 tablero[fila, columna + i] = "O"
 
-        elif newori == "O" and columna - (barco.cantidad - 1) >= 0:
-            for i in range(barco.cantidad):
+        elif newori == "O" and columna - (self.cantidad - 1) >= 0:
+            for i in range(self.cantidad):
                 if tablero[fila, columna - i] != " ":
                     return "Espacio ocupado, intenta de nuevo."
-            for i in range(barco.cantidad):
+            for i in range(self.cantidad):
                 tablero[fila, columna - i] = "O"
         else:
             print(f"La CPU ha colocado sus barcos")
@@ -103,10 +102,11 @@ class Tablero:
     def creatablero (self,lado=10):
         return np.full((lado, lado)," " )
     
-    def allbarcos(self, stockbarcos):
+    def allbarcos(self,stockbarcos,tablero):
         for nombre, cantidad in stockbarcos.items():
             for i in range(cantidad):
-                tablerotemp= Barco.colocabarco(nombre, self)
+                barco= Barco(nombre, stockbarcos[nombre], cantidad)
+                tablerotemp= barco.colocabarco(tablero)
                 i-=1
         return tablerotemp
     
