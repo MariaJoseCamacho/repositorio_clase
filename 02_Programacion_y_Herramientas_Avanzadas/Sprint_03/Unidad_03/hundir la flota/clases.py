@@ -90,12 +90,7 @@ class Barco:
             print(f"La CPU ha colocado sus barcos")
         return tablero
     
-    def allbarcos(self, tablero, stockbarcos):
-        for nombre, cantidad in stockbarcos.items():
-            for i in range(cantidad):
-                tablerotemp= Barco.colocabarco(nombre, tablero)
-                i-=1
-        return tablerotemp
+   
 
 Destructor = Barco("Destructor", 1, 4)
 Submarino = Barco("Submarino", 2, 3)
@@ -108,6 +103,13 @@ class Tablero:
     def creatablero (self,lado=10):
         return np.full((lado, lado)," " )
     
+    def allbarcos(self, stockbarcos):
+        for nombre, cantidad in stockbarcos.items():
+            for i in range(cantidad):
+                tablerotemp= Barco.colocabarco(nombre, self)
+                i-=1
+        return tablerotemp
+    
     def disparar(tablero):
         (x,y) = input ("¿Donde quieres disparar? Recuerda que tienes que facilitarnos dos coordenadas, la 'x'  y la 'y'.")
         if tablero[x][y]=="O":
@@ -118,10 +120,11 @@ class Tablero:
             tablero[x][y]="-"
             print("Has disparado al agua")
 
-def comprobartablero(tablero):
+    def comprobartablero(tablero):
        
-    if tablero!="O":
-        return f"¡¡¡Has ganado!!!"
-
+        if tablero!="O":
+            return f"¡¡¡Has ganado!!!"
+        
    
+    
 
