@@ -57,12 +57,8 @@ ML_ChurnLaboral_MariaJoseCamacho/
 ## Métricas y evaluación  
 
 Para evaluar la calidad del modelo, utilizo:
-
-- **Accuracy**: porcentaje de empleados correctamente clasificados.  
+ 
 - **Recall**: de los empleados que realmente se fueron, cuántos detectó el modelo.  
-- **Precision**: de los que el modelo predijo que se irían, cuántos realmente se fueron.  
-- **F1-score**: equilibrio entre precisión y recall.  
-- **AUC-ROC**: curva para analizar el rendimiento general del modelo.  
 
 También analizo la **importancia de las variables** y visualizo los resultados para entender el comportamiento del modelo y generar conclusiones prácticas para recursos humanos.
 
@@ -117,7 +113,7 @@ This approach combines predictive power with strategic workforce analysis.
 
 ## Repository Structure  
 
-ML_ChurnLaboral_MariaJoseCamacho/ 
+ML_ChurnLaboral_MariaJoseCamacho/                                                                                                               
 ├── src/                                     # Source directory containing the project folders                                
 │ ├── data_sample/                           # Reduced version of the dataset                       
 │ ├── img/                                   # Images used in the project                                    
@@ -133,12 +129,9 @@ ML_ChurnLaboral_MariaJoseCamacho/
 ## Evaluation Metrics  
 
 To assess model performance, I use the following metrics:
-
-- **Accuracy**: percentage of correctly classified employees.  
+  
 - **Recall**: of the employees who actually left, how many the model correctly identified.  
-- **Precision**: of those predicted to leave, how many actually did.  
-- **F1-score**: balance between precision and recall.  
-- **AUC-ROC**: area under the ROC curve to evaluate overall performance.  
+
 
 I also analyze **feature importance** and visualize results to better understand model behavior and derive actionable insights for HR.
 
