@@ -42,15 +42,15 @@ Este enfoque permite combinar predicción y análisis estratégico del capital h
 
 ML_ChurnLaboral_MariaJoseCamacho/  
 
-├── src/                       # El directorio source que debe contener al resto de carpetas
-│   ├── data_sample/           # Muestra reducida del dataset para subir al repositorio 
-│   ├── img/                   # Imágenes que hayas  utilizado para tu proyecto 
-│   ├── models/                # Modelos entrenados guardados (pkl, joblib...)  
-│   ├── notebooks/             # Notebooks usados para pruebas y desarrollo  
-│   └── utils/                 # Módulos o funciones auxiliares del proyecto  
-├── README.md                  # Documentación general del proyecto  
-├── main.ipynb                 # Notebook principal con el proceso completo  
-├── presentación.pdf           # Documento soporte para la exposición de resultados
+├── src/                       # El directorio source que debe contener al resto de carpetas                   
+│   ├── data_sample/           # Muestra reducida del dataset para subir al repositorio                              
+│   ├── img/                   # Imágenes que hayas  utilizado para tu proyecto                                   
+│   ├── models/                # Modelos entrenados guardados (pkl, joblib...)                             
+│   ├── notebooks/             # Notebooks usados para pruebas y desarrollo                               
+│   └── utils/                 # Módulos o funciones auxiliares del proyecto                       
+├── README.md                  # Documentación general del proyecto                     
+├── main.ipynb                 # Notebook principal con el proceso completo                  
+├── presentación.pdf           # Documento soporte para la exposición de resultados                  
 
 ---
 
