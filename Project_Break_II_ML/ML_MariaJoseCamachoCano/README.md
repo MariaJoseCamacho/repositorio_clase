@@ -74,12 +74,6 @@ Este modelo puede ampliarse con más datos reales, incorporar datos de encuestas
 
 
 
-
-
-
-
-
-
 ---
 # Employee Attrition Prediction
 
