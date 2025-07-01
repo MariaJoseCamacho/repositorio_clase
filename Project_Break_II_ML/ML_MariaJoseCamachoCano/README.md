@@ -117,16 +117,16 @@ This approach combines predictive power with strategic workforce analysis.
 
 ## Repository Structure  
 
-ML_ChurnLaboral_MariaJoseCamacho/
-├── src/                         # Source directory containing the project folders
-│ ├── data_sample/               # Reduced version of the dataset
-│ ├── img/                       # Images used in the project
-│ ├── models/                    # Saved trained models (pkl, joblib...)
-│ ├── notebooks/                 # Notebooks for testing and development
-│ └── utils/                     # Utility modules and helper functions
-├── README.md                    # General project documentation
-├── main.ipynb                   # Main notebook with the full process
-├── presentación.pdf             # PDF file for results presentation
+ML_ChurnLaboral_MariaJoseCamacho/ 
+├── src/                                     # Source directory containing the project folders                                
+│ ├── data_sample/                           # Reduced version of the dataset                       
+│ ├── img/                                   # Images used in the project                                    
+│ ├── models/                                # Saved trained models (pkl, joblib...)                       
+│ ├── notebooks/                             # Notebooks for testing and development                       
+│ └── utils/                                 # Utility modules and helper functions                               
+├── README.md                                # General project documentation                           
+├── main.ipynb                               # Main notebook with the full process                                 
+├── presentación.pdf                         # PDF file for results presentation                                 
 
 ---
 
