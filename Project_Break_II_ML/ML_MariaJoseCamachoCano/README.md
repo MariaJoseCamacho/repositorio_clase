@@ -217,7 +217,7 @@ weighted avg       0.85      0.78      0.80       294
 
 The following figure shows the confusion matrix of the optimized model. It can be observed that the model correctly identifies most employees who stay (class "No") and a good portion of those who leave (class "Yes"), reflecting a balanced performance:
 
-![Confusion Matrix - Logistic Regression](src/img/matriz_confusion_logreg.png)
+![Confusion Matrix - Logistic Regression](src/img/confusion_matrix.png)
 
 ---
 
@@ -236,7 +236,7 @@ This interpretation facilitates decision-making for HR teams by clearly showing 
 
 This chart shows the importance of each feature based on the logistic regression coefficients. Variables with positive coefficients increase the probability that an employee will leave the company, while negative coefficients decrease it:
 
-![Feature Importance - Coefficients](src/img/importancia_coeficientes.png)
+![Feature Importance - Coefficients](src/img/coeficientes_logreg.png)
 ---
 
 ## Future Recommendations
