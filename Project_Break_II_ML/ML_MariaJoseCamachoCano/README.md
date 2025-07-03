@@ -68,9 +68,64 @@ También analizo la **importancia de las variables** y visualizo los resultados 
 
 Este modelo puede ampliarse con más datos reales, incorporar datos de encuestas internas o de clima laboral, y conectarse a sistemas de RRHH en tiempo real para automatizar alertas de riesgo de abandono.
 
+### Resultados tras la optimización del modelo:
 
+Classification Report - Modelo Optimizado (Logistic Regression):
+
+              precision    recall  f1-score   support
+
+          No       0.94      0.79      0.86       247
+         Yes       0.40      0.72      0.51        47
+
+    accuracy                           0.78       294
+   macro avg       0.67      0.76      0.68       294
+weighted avg       0.85      0.78      0.80       294
 
 ---
+### Matriz de confusión del modelo optimizado
+
+La siguiente gráfica muestra la matriz de confusión del modelo optimizado. Se observa que el modelo consigue detectar correctamente la mayoría de empleados que se quedan (clase "No") y un buen número de los que se marchan (clase "Yes"), lo que refleja un buen equilibrio en el rendimiento:
+
+![Matriz de confusión - Logistic Regression](src/img/matriz_confusion_logreg.png)
+
+---
+
+## Interpretabilidad del modelo
+
+Gracias al uso de Regresión Logística como modelo final, ha sido posible interpretar fácilmente la influencia de cada variable en la predicción de rotación.
+
+Se han extraído los coeficientes del modelo y se han representado gráficamente, clasificando su impacto:
+
+- **Coeficientes positivos**: aumentan la probabilidad de rotación.
+- **Coeficientes negativos**: disminuyen la probabilidad de rotación.
+
+Esta interpretación facilita la toma de decisiones por parte de equipos de RRHH, al entender qué variables tienen más peso en la predicción.
+
+
+### Importancia de las variables (coeficientes del modelo)
+
+Este gráfico muestra la importancia de cada variable según los coeficientes de la regresión logística. Las variables con coeficiente positivo aumentan la probabilidad de que un empleado abandone la empresa, mientras que las de coeficiente negativo la reducen:
+
+![Importancia de los coeficientes](src/img/importancia_coeficientes.png)
+---
+
+## Recomendaciones futuras
+
+Este proyecto podría ampliarse con:
+
+- Datos reales de la empresa (más ricos y recientes).
+- Incorporación de variables blandas como clima laboral, cultura organizativa o entrevistas de salida.
+- Uso de interpretabilidad avanzada con SHAP o LIME.
+- Automatización del scoring en tiempo real con dashboards para RRHH.
+
+---
+
+## Autor
+
+**María José Camacho**  
+Proyecto final del curso de Machine Learning aplicado a la empresa.
+
+
 # Employee Attrition Prediction
 
 ## Project Description  
@@ -145,3 +200,57 @@ This model can be enhanced by:
 - Adding internal surveys or workplace satisfaction metrics  
 - Connecting to real-time HR systems for churn risk alerts  
 - Deploying the model as an API for integration with HR software
+
+### Results After Model Optimization:
+
+Classification Report – Optimized Model (Logistic Regression):
+              precision    recall  f1-score   support
+
+          No       0.94      0.79      0.86       247
+         Yes       0.40      0.72      0.51        47
+
+    accuracy                           0.78       294
+   macro avg       0.67      0.76      0.68       294
+weighted avg       0.85      0.78      0.80       294
+
+### Confusion Matrix of the Optimized Model
+
+The following figure shows the confusion matrix of the optimized model. It can be observed that the model correctly identifies most employees who stay (class "No") and a good portion of those who leave (class "Yes"), reflecting a balanced performance:
+
+![Confusion Matrix - Logistic Regression](src/img/matriz_confusion_logreg.png)
+
+---
+
+## Model Interpretability
+
+Thanks to the use of Logistic Regression as the final model, it was possible to easily interpret the influence of each variable on churn prediction.
+
+The model's coefficients were extracted and visualized, and their impact classified as follows:
+
+- **Positive coefficients**: increase the probability of attrition.
+- **Negative coefficients**: decrease the probability of attrition.
+
+This interpretation facilitates decision-making for HR teams by clearly showing which variables most influence employee turnover.
+
+### Feature Importance (Model Coefficients)
+
+This chart shows the importance of each feature based on the logistic regression coefficients. Variables with positive coefficients increase the probability that an employee will leave the company, while negative coefficients decrease it:
+
+![Feature Importance - Coefficients](src/img/importancia_coeficientes.png)
+---
+
+## Future Recommendations
+
+This project could be further developed with:
+
+- Real and updated company data.
+- Integration of qualitative variables such as work climate, organizational culture, or exit interview feedback.
+- Advanced interpretability using SHAP or LIME.
+- Real-time scoring automation with HR dashboards.
+
+---
+
+## Author
+
+**María José Camacho**  
+Final project – Machine Learning for Business course.
