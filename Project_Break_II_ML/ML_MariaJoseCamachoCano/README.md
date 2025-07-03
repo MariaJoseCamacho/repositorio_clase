@@ -86,7 +86,7 @@ weighted avg       0.85      0.78      0.80       294
 
 La siguiente gráfica muestra la matriz de confusión del modelo optimizado. Se observa que el modelo consigue detectar correctamente la mayoría de empleados que se quedan (clase "No") y un buen número de los que se marchan (clase "Yes"), lo que refleja un buen equilibrio en el rendimiento:
 
-![Matriz de confusión - Logistic Regression](src/img/matriz_confusion_logreg.png)
+![Confusion Matrix - Logistic Regression](src/img/confusion_matrix.png)
 
 ---
 
@@ -106,7 +106,7 @@ Esta interpretación facilita la toma de decisiones por parte de equipos de RRHH
 
 Este gráfico muestra la importancia de cada variable según los coeficientes de la regresión logística. Las variables con coeficiente positivo aumentan la probabilidad de que un empleado abandone la empresa, mientras que las de coeficiente negativo la reducen:
 
-![Importancia de los coeficientes](src/img/importancia_coeficientes.png)
+![Feature Importance - Coefficients](src/img/coeficientes_logreg.png)
 ---
 
 ## Recomendaciones futuras
