@@ -109,6 +109,55 @@ Este gráfico muestra la importancia de cada variable según los coeficientes de
 ![Feature Importance - Coefficients](src/img/coeficientes_logreg.png)
 ---
 
+## Análisis no supervisado: segmentación de empleados
+
+### Objetivo
+Aplicar técnicas de aprendizaje no supervisado (clustering) para **identificar patrones y grupos ocultos** entre los empleados sin usar la variable objetivo (`Attrition`).  
+Esto permite al departamento de RRHH **diseñar estrategias específicas** de retención y desarrollo según el perfil de cada grupo.
+
+---
+
+### Metodología
+
+Se seleccionaron variables numéricas relevantes, se escalaron y se aplicó **PCA** para visualizar patrones.  
+Se determinó el número óptimo de grupos (**k = 4**) con métodos de codo y silhouette.  
+Se aplicó **KMeans** y se analizaron los perfiles y su relación con la rotación (`Attrition`).
+
+---
+
+### Interpretación de los perfiles de cluster (escalado 0-1)
+
+- **Cluster 0**:  
+  Perfil más joven, con poca antigüedad, pocos años con su jefe y nivel bajo de promoción. También presentan sueldos bajos. Posiblemente empleados recién incorporados o en fase inicial de carrera.
+
+- **Cluster 1**:  
+  Edad media, ingresos medios, tiempo razonable en la empresa y con su responsable. Destacan por tener el mayor porcentaje de aumento salarial. Podrían representar un perfil estable y motivado.
+
+- **Cluster 2**:  
+  Empleados mayores, con alta experiencia, antigüedad, nivel jerárquico alto y altos ingresos. Es el grupo más consolidado, probablemente cargos senior o directivos.
+
+- **Cluster 3**:  
+  Tienen también edad alta, pero menor promoción reciente, bajo crecimiento salarial y menos años con el jefe actual. Podrían estar en una fase de estancamiento o desmotivación.
+
+---
+
+### Porcentaje de empleados que abandonan por cluster
+
+| Cluster | % No (Permanece) | % Yes (Abandona) |
+|---------|------------------|------------------|
+| **0**   | 78.86 %          | **21.14 %**      |
+| **1**   | 88.16 %          | 11.84 %          |
+| **2**   | 91.04 %          | 8.96 %           |
+| **3**   | 93.18 %          | 6.82 %           |
+
+---
+
+### Conclusiones del análisis no supervisado
+
+- El **Cluster 0** presenta el mayor porcentaje de abandono. Es un grupo de empleados más jóvenes, menos consolidados y con menor proyección.
+- Los **Clusters 2 y 3** reflejan perfiles más estables y con menos probabilidad de abandonar la empresa.
+- Este análisis aporta **segmentación útil para Recursos Humanos**, permitiendo anticipar la rotación y aplicar políticas diferenciadas por perfil (formación, ascensos, motivación, etc.).
+
 ## Recomendaciones futuras
 
 Este proyecto podría ampliarse con:
@@ -187,7 +236,6 @@ To assess model performance, I use the following metrics:
   
 - **Recall**: of the employees who actually left, how many the model correctly identified.  
 
-
 I also analyze **feature importance** and visualize results to better understand model behavior and derive actionable insights for HR.
 
 ---
@@ -238,6 +286,55 @@ This chart shows the importance of each feature based on the logistic regression
 
 ![Feature Importance - Coefficients](src/img/coeficientes_logreg.png)
 ---
+## Unsupervised Analysis: Employee Segmentation
+
+### Objective
+Apply unsupervised learning techniques (clustering) to **identify hidden patterns and groups** among employees without using the target variable (`Attrition`).  
+This allows HR departments to **design specific retention and development strategies** tailored to each employee profile.
+
+---
+
+### Methodology
+
+Relevant numerical variables were selected, scaled, and **PCA** was applied for visualization.  
+The optimal number of clusters (**k = 4**) was determined using the elbow and silhouette methods.  
+**KMeans** clustering was applied, and the resulting groups were analyzed in terms of profile and their relation to employee attrition.
+
+---
+
+### Cluster Profile Interpretation (scaled 0–1)
+
+- **Cluster 0**:  
+  Younger employees with low tenure, fewer years with their manager, lower job level and promotions, and lower salaries. Likely new hires or early-career profiles.
+
+- **Cluster 1**:  
+  Medium age and income, moderate tenure and managerial continuity. They stand out for having the highest salary increase. Possibly stable and motivated employees.
+
+- **Cluster 2**:  
+  Older employees with extensive experience, long tenure, high job level and salary. This is the most consolidated group, likely senior or leadership roles.
+
+- **Cluster 3**:  
+  Also older employees, but with fewer recent promotions, lower salary growth, and less time with their current manager. They may be in a phase of stagnation or demotivation.
+
+---
+
+### Percentage of Employees Who Left, by Cluster
+
+| Cluster | % No (Stayed)     | % Yes (Left)      |
+|---------|-------------------|-------------------|
+| **0**   | 78.86 %           | **21.14 %**       |
+| **1**   | 88.16 %           | 11.84 %           |
+| **2**   | 91.04 %           | 8.96 %            |
+| **3**   | 93.18 %           | 6.82 %            |
+
+---
+
+### 🔍 Conclusions from the Unsupervised Analysis
+
+- **Cluster 0** shows the highest attrition rate. These are younger employees, less established and with lower growth prospects.
+- **Clusters 2 and 3** represent more stable profiles with a lower likelihood of leaving the company.
+- This analysis provides **valuable segmentation for HR**, allowing them to anticipate turnover and apply tailored policies (training, promotions, motivation, etc.).
+
 
 ## Future Recommendations
 
